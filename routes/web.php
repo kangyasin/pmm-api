@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/kontak','ControllerKontak@index');
+Route::get('/kontak/{id}','ControllerKontak@show');
+Route::post('/kontak/store','ControllerKontak@store');
+Route::post('/kontak/update/{id}','ControllerKontak@update');
+Route::post('/kontak/delete/{id}','ControllerKontak@destroy');
+
+
