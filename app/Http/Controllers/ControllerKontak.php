@@ -118,7 +118,7 @@ class ControllerKontak extends Controller
     $data->alamat = $alamat;
 
     if($data->save()){
-        $res['message'] = "Success!";
+        $res['message'] = "sukses";
         $res['value'] = "$data";
         return response($res);
     }

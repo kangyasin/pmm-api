@@ -19,6 +19,10 @@ Route::get('/kontak','ControllerKontak@index');
 Route::get('/kontak/{id}','ControllerKontak@show');
 Route::post('/kontak/store','ControllerKontak@store');
 Route::post('/kontak/update/{id}','ControllerKontak@update');
-Route::post('/kontak/delete/{id}','ControllerKontak@destroy');
+Route::get('/kontak/delete/{id}','ControllerKontak@destroy');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
