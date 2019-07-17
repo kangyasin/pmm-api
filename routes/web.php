@@ -20,7 +20,7 @@ Route::get('/kontak/{id}','ControllerKontak@show');
 Route::post('/kontak/store','ControllerKontak@store');
 Route::post('/kontak/update/{id}','ControllerKontak@update');
 Route::get('/kontak/delete/{id}','ControllerKontak@destroy');
-
+Route::post('/dologin', 'Auth\AuthController@login');
 
 
 Auth::routes();
