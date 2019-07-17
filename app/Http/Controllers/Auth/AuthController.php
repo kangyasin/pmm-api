@@ -29,7 +29,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Get a JWT via given credentials.
+     * Response login data
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -39,7 +39,6 @@ class AuthController extends Controller
         if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => trans('auth.failed')], 401);
         }
-
         $response = $this->me();
         $response['error'] = null;
         return $response;
