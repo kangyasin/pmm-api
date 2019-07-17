@@ -39,7 +39,9 @@ class AuthController extends Controller
         if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => trans('auth.failed')], 401);
         }
-        return $this->me();
+        $response = $this->me();
+        $response['error'] = null;
+        return $response;
     }
 
     /**
@@ -49,7 +51,7 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+        return auth()->user();
     }
 
     /**
